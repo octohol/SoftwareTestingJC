@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: dotnet build ./src/SoftwareTesting.sln --no-restore
     - name: Test
-      run: dotnet test ./src/XUnitExamples/XUnitExamples.csproj --no-build --verbosity normal --collect "Code coverage"
+      run: dotnet test ./src/XUnitExamples/XUnitExamples.csproj --no-build --verbosity normal -xml ./test-results/xunit/xtests.xml
     - name: Show FIles
       run: ls -R
     - name: Publish Test Results
