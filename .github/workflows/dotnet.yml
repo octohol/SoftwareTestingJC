@@ -37,4 +37,4 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        trx_files: "test-results/**/*.trx"
+        trx_files: "/**/*.trx"
