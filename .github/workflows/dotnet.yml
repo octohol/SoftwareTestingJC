@@ -28,6 +28,8 @@ jobs:
       run: dotnet build ./src/SoftwareTesting.sln --no-restore
     - name: Test
       run: dotnet test ./src/XUnitExamples/XUnitExamples.csproj --no-build --verbosity normal --collect "Code coverage"
+    - name: Show FIles
+      run: ls -R
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
