@@ -29,12 +29,8 @@ jobs:
     - name: Test
       run: dotnet test ./src/XUnitExamples/XUnitExamples.csproj --no-build --verbosity normal --logger "trx;LogFileName=xtests.trx"
       
-    - name: Show FIles
-      if: always()
-      run: ls -R
-      
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        trx_files: "TestResults/**/*.trx"
+        trx_files: "/home/runner/work/SoftwareTestingJC/SoftwareTestingJC/src/XUnitExamples/TestResults/xtests.trx"
